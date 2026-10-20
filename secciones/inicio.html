@@ -1,0 +1,118 @@
+<div class="container-fluid p-0 space-y-4">
+    <!-- Hero Jumbotron con Gradiente y Bootstrap -->
+    <div class="p-5 mb-4 text-white rounded-3 shadow-lg bg-gradient bg-samgy-primary relative-overflow">
+        <div class="container-fluid py-2">
+            <span class="badge bg-white text-dark mb-2 px-3 py-2 uppercase fw-bold">Colegio San Alberto Magno</span>
+            <h1 class="display-5 fw-bold font-title">Sistema de Gestión de Enfermería Escolar (SAMGY)</h1>
+            <p class="col-md-9 fs-5 mt-3 opacity-90">Plataforma digital para el registro, control de salud, consultas rápidas y seguimiento sanitario continuo de los estudiantes.</p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+                <button onclick="loadSection('estudiantes')" class="btn btn-light btn-lg fw-bold text-samgy-primary">
+                    <i class="bi bi-people-fill me-2"></i>Ver Estudiantes
+                </button>
+                <button onclick="loadSection('atenciones')" class="btn btn-info btn-lg text-white fw-bold bg-samgy-info">
+                    <i class="bi bi-journal-plus me-2"></i>Nuevo Registro
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards de Métricas Rápidas (Bootstrap Cards) -->
+    <div class="row g-3 mb-4">
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card card-samgy h-100 p-3">
+                <div class="d-flex align-items-center">
+                    <div class="rounded-3 bg-light text-samgy-primary p-3 me-3 fs-3">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <div>
+                        <div class="text-uppercase text-muted small fw-bold">Estudiantes</div>
+                        <div class="fs-3 fw-bold text-dark" id="stat-total-estudiantes">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card card-samgy h-100 p-3">
+                <div class="d-flex align-items-center">
+                    <div class="rounded-3 bg-success bg-opacity-10 text-success p-3 me-3 fs-3">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+                    <div>
+                        <div class="text-uppercase text-muted small fw-bold">Atenciones</div>
+                        <div class="fs-3 fw-bold text-dark" id="stat-total-atenciones">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card card-samgy h-100 p-3">
+                <div class="d-flex align-items-center">
+                    <div class="rounded-3 bg-warning bg-opacity-10 text-warning p-3 me-3 fs-3">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+                    <div>
+                        <div class="text-uppercase text-muted small fw-bold">Recurrentes</div>
+                        <div class="fs-3 fw-bold text-dark" id="stat-recurrentes">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card card-samgy h-100 p-3">
+                <div class="d-flex align-items-center">
+                    <div class="rounded-3 bg-info bg-opacity-10 text-samgy-info p-3 me-3 fs-3">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div>
+                        <div class="text-uppercase text-muted small fw-bold">Identidad</div>
+                        <div class="fs-6 fw-bold text-dark">Manual de Marca</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Autores del Proyecto (Manual de Marca) -->
+    <div class="card card-samgy p-4 mb-4">
+        <h5 class="fw-bold text-dark font-title mb-1">Equipo de Trabajo & Creadores (SAMGY)</h5>
+        <p class="text-muted small mb-4">Autores oficiales según Manual de Marca</p>
+
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-3 text-center">
+            <div class="col">
+                <div class="p-3 bg-light rounded-3 border">
+                    <div class="avatar-initials mx-auto mb-2">YB</div>
+                    <h6 class="fw-bold mb-0 text-dark small">Yaricel Bayter</h6>
+                    <span class="badge bg-samgy-info text-white mt-2">Especialista DB</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-light rounded-3 border">
+                    <div class="avatar-initials mx-auto mb-2">MH</div>
+                    <h6 class="fw-bold mb-0 text-dark small">Mathias Hernández</h6>
+                    <span class="badge bg-samgy-info text-white mt-2">Diseñador UI/UX</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-light rounded-3 border">
+                    <div class="avatar-initials mx-auto mb-2">GM</div>
+                    <h6 class="fw-bold mb-0 text-dark small">Gabriela Martínez</h6>
+                    <span class="badge bg-samgy-info text-white mt-2">Líder Proyecto</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-light rounded-3 border">
+                    <div class="avatar-initials mx-auto mb-2">AP</div>
+                    <h6 class="fw-bold mb-0 text-dark small">Andrea Pallares</h6>
+                    <span class="badge bg-samgy-info text-white mt-2">Frontend Dev</span>
+                </div>
+            </div>
+            <div class="col col-12 col-sm-6 col-md-2">
+                <div class="p-3 bg-light rounded-3 border">
+                    <div class="avatar-initials mx-auto mb-2">SV</div>
+                    <h6 class="fw-bold mb-0 text-dark small">Sajoha Vásquez</h6>
+                    <span class="badge bg-samgy-info text-white mt-2">Analista Sistemas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

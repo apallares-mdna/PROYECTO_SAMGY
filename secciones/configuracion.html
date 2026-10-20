@@ -1,0 +1,37 @@
+<div class="container-fluid p-0">
+    <div class="row g-4">
+        <div class="col-12 col-lg-4">
+            <div class="card card-samgy p-4 text-center">
+                <div class="avatar-initials fs-3 mx-auto mb-3" style="width:70px; height:70px;">EN</div>
+                <h5 class="fw-bold font-title text-dark mb-0" id="profile-display-name">Enfermera Titular</h5>
+                <p class="text-muted small mb-2">Colegio San Alberto Magno</p>
+                <div><span class="badge bg-success-subtle text-success fw-bold px-3 py-1">Sistema Activo</span></div>
+
+                <form onsubmit="handleSaveProfile(event)" class="text-start mt-4">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Nombre de Usuario</label>
+                        <input type="text" id="profile-input-name" value="Lic. Enfermería" class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Rol en la Plataforma</label>
+                        <input type="text" value="Administrador de Base de Datos" readonly class="form-control form-control-sm bg-light">
+                    </div>
+                    <button type="submit" class="btn btn-samgy w-100">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+            <div class="card card-samgy p-4">
+                <h5 class="fw-bold font-title text-dark border-bottom pb-3 mb-3">Ajustes del Sistema</h5>
+                <div class="p-3 bg-light rounded border mb-3">
+                    <h6 class="fw-bold text-dark font-title">Mantenimiento de Datos Locales</h6>
+                    <p class="text-muted small mb-3">Restablece la base de datos local a la información predeterminada del sistema.</p>
+                    <button onclick="resetDataToDefault()" class="btn btn-warning btn-sm fw-bold text-dark">
+                        <i class="bi bi-arrow-counterclockwise me-1"></i>Restablecer Datos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

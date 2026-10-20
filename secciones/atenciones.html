@@ -1,0 +1,62 @@
+<div class="container-fluid p-0">
+    <div class="row g-4">
+        <!-- Formulario Bootstrap -->
+        <div class="col-12 col-lg-4">
+            <div class="card card-samgy p-4">
+                <div class="d-flex justify-content-between align-items-center pb-3 mb-3 border-bottom">
+                    <h5 class="fw-bold font-title text-dark mb-0">
+                        <i class="bi bi-journal-plus text-samgy-primary me-2"></i>Nuevo Registro
+                    </h5>
+                    <span class="badge bg-primary-subtle text-samgy-primary fw-bold">Enfermería</span>
+                </div>
+
+                <form id="nueva-visita-form" onsubmit="handleNuevaVisitaSubmit(event)">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Estudiante</label>
+                        <select id="visita-student-select" required class="form-select form-select-sm">
+                            <option value="">-- Seleccionar --</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Motivo / Síntomas</label>
+                        <input type="text" id="visita-sintomas" required class="form-control form-control-sm" placeholder="Ej. Dolor de cabeza, mareos...">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Observaciones / Diagnóstico</label>
+                        <textarea id="visita-observaciones" rows="3" required class="form-control form-control-sm" placeholder="Ej. Tensión arterial normal..."></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">Tratamiento Administrado</label>
+                        <input type="text" id="visita-tratamiento" required class="form-control form-control-sm" placeholder="Ej. Reposo y rehidratación...">
+                    </div>
+
+                    <div class="p-2 bg-light rounded border text-muted small d-flex justify-content-between mb-3">
+                        <span><i class="bi bi-clock me-1"></i>Fecha y Hora:</span>
+                        <span id="live-timestamp-preview" class="fw-bold text-dark">Automático</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-samgy w-100 py-2">
+                        <i class="bi bi-floppy-fill me-2"></i>Guardar Registro
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Historial Bootstrap -->
+        <div class="col-12 col-lg-8">
+            <div class="card card-samgy p-4">
+                <div class="pb-3 mb-3 border-bottom">
+                    <h5 class="fw-bold font-title text-dark mb-0">Historial de Visitas a Enfermería</h5>
+                    <p class="text-muted small mb-0">Registro cronológico de atenciones médicas escolares</p>
+                </div>
+
+                <div id="visitas-history-container" class="space-y-3" style="max-height: 550px; overflow-y: auto;">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

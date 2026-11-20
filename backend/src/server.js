@@ -19,8 +19,10 @@ async function iniciarServidor() {
     await authService.inicializarAdminSiNoExiste();
 
     // 3. Poner a la escucha el servidor
-    const server = app.listen(env.PORT, '127.0.0.1', () => {
-      console.log(`\n✅ SAMGY API escuchando activamente en http://127.0.0.1:${env.PORT}`);
+    // En producción (Render/Railway/Docker) debe escuchar en 0.0.0.0; en local solo en loopback.
+    const host = process.env.HOST || (env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1');
+    const server = app.listen(env.PORT, host, () => {
+      console.log(`\n✅ SAMGY API escuchando activamente en http://${host}:${env.PORT}`);
       console.log(`✅ Archivos estáticos de frontend servidos desde ${env.FRONTEND_PATH || '../frontend'}`);
       console.log('=============================================================\n');
     });

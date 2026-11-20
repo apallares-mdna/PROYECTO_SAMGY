@@ -15,6 +15,11 @@ const __dirname = path.dirname(__filename);
 
 export const app = express();
 
+// Detrás del proxy de Render/Railway: necesario para IP real (rate limit) y cookies secure
+if (env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // 1. Cabeceras de seguridad estrictas con Helmet y CSP compatible con Bootstrap CDN y Google Fonts
 app.use(
   helmet({

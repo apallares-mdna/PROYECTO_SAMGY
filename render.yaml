@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: samgy
+    runtime: node
+    plan: starter            # el plan free NO admite disco persistente
+    buildCommand: npm run setup
+    startCommand: npm start
+    healthCheckPath: /
+    disk:
+      name: samgy-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: DB_PATH
+        value: /data/samgy.sqlite
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_CORREO
+        value: admin@sanalbertomagno.edu.co
+      - key: ADMIN_PASSWORD
+        sync: false          # se pide en el panel de Render al crear el servicio
